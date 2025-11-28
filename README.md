@@ -12,33 +12,25 @@ This MCP server exposes tools for interacting with Freelo tasks, subtasks, and f
 
 ## Quick Start
 
-```bash
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-```
-
-## Freelo API Setup
-
 ### 1. Get Your Freelo API Key
 
 1. Log in to your [Freelo Dashboard](https://app.freelo.cz/dashboard)
-2. Click on your avatar in the top right corner
-3. Select **Settings**
-4. Scroll to the bottom of the page to find your **API Key**
-5. Copy your API key (it will look like: `9lDZU35Lb0wmnq4tWvmmUkugLja4dXwPDcOMP1CBdIa`)
+2. Click on your avatar in the top right corner → **Settings**
+3. Scroll to the bottom to find your **API Key**
 
-### 2. Claude Code (Recommended)
-
-The easiest way to use freelo-mcp is with Claude Code via npx:
+### 2. Add to Claude Code
 
 ```bash
 claude mcp add freelo-mcp -e FREELO_EMAIL=your-email@example.com -e FREELO_API_KEY=your-api-key -- npx -y @liquiddesign/freelo-mcp
 ```
 
-Or add manually to your MCP settings (`~/.claude/settings.json` or project `.mcp.json`):
+That's it! You can now use Freelo tools in Claude Code.
+
+## Alternative Setup
+
+### Claude Code (Manual)
+
+Add to your MCP settings (`~/.claude/settings.json` or project `.mcp.json`):
 
 ```json
 {
@@ -55,7 +47,7 @@ Or add manually to your MCP settings (`~/.claude/settings.json` or project `.mcp
 }
 ```
 
-### 3. Claude Desktop
+### Claude Desktop
 
 Add to Claude Desktop configuration file:
 
@@ -77,9 +69,20 @@ Add to Claude Desktop configuration file:
 }
 ```
 
-### 4. Development Setup (Local)
+## Development
 
-For local development, use the built project directly:
+```bash
+# Install dependencies
+npm install
+
+# Build the project
+npm run build
+
+# Watch mode during development
+npm run watch
+```
+
+For local development, configure Claude to use the built project directly:
 
 ```json
 {
