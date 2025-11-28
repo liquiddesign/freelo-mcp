@@ -74,15 +74,9 @@ class FreeloListTaskSubtasks extends MCPTool<FreeloListTaskSubtasksInput> {
       };
     } catch (error) {
       if (error instanceof Error) {
-        return {
-          success: false,
-          error: error.message,
-        };
+        throw new Error(`Failed to fetch subtasks: ${error.message}`);
       }
-      return {
-        success: false,
-        error: "Unknown error occurred while fetching task subtasks",
-      };
+      throw new Error("Unknown error occurred while fetching task subtasks");
     }
   }
 }

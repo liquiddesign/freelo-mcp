@@ -96,15 +96,9 @@ class FreeloGetTask extends MCPTool<FreeloGetTaskInput> {
       };
     } catch (error) {
       if (error instanceof Error) {
-        return {
-          success: false,
-          error: error.message,
-        };
+        throw new Error(`Failed to fetch task: ${error.message}`);
       }
-      return {
-        success: false,
-        error: "Unknown error occurred while fetching task",
-      };
+      throw new Error("Unknown error occurred while fetching task");
     }
   }
 

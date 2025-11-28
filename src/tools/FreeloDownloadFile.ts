@@ -67,15 +67,9 @@ class FreeloDownloadFile extends MCPTool<FreeloDownloadFileInput> {
       };
     } catch (error) {
       if (error instanceof Error) {
-        return {
-          success: false,
-          error: error.message,
-        };
+        throw new Error(`Failed to download file: ${error.message}`);
       }
-      return {
-        success: false,
-        error: "Unknown error occurred while downloading file",
-      };
+      throw new Error("Unknown error occurred while downloading file");
     }
   }
 
