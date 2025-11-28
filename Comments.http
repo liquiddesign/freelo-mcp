@@ -1,0 +1,5 @@
+### GET request to example server
+GET https://api.freelo.io/v1/task/25910099
+Authorization: Basic petr@lqd.cz vTVOYkdjvc5UVPupaId06qugrywbBsGdMqvHs2JUnJH
+
+###

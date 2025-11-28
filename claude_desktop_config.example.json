@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "freelo-mcp": {
+      "command": "npx",
+      "args": ["freelo-mcp"],
+      "env": {
+        "FREELO_EMAIL": "your-email@example.com",
+        "FREELO_API_KEY": "your-freelo-api-key-here"
+      }
+    }
+  }
+}

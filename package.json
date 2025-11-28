@@ -1,0 +1,32 @@
+{
+  "name": "@liquiddesign/freelo-mcp",
+  "version": "0.0.1",
+  "author": {
+    "name": "Liquid Design",
+    "email": "dev@lqd.cz"
+  },
+  "description": "freelo-mcp is a minimal MCP server to download tasks from Freelo.io",
+  "type": "module",
+  "bin": {
+    "freelo-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && mcp-build",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mcp-framework": "^0.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.19.0"
+  }
+}
