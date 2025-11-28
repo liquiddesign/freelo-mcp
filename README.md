@@ -30,12 +30,56 @@ npm run build
 4. Scroll to the bottom of the page to find your **API Key**
 5. Copy your API key (it will look like: `9lDZU35Lb0wmnq4tWvmmUkugLja4dXwPDcOMP1CBdIa`)
 
-### 2. Configure Claude Desktop
+### 2. Claude Code (Recommended)
 
-Add your credentials to the Claude Desktop configuration file:
+The easiest way to use freelo-mcp is with Claude Code via npx:
+
+```bash
+claude mcp add freelo-mcp -e FREELO_EMAIL=your-email@example.com -e FREELO_API_KEY=your-api-key -- npx -y @liquiddesign/freelo-mcp
+```
+
+Or add manually to your MCP settings (`~/.claude/settings.json` or project `.mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "freelo-mcp": {
+      "command": "npx",
+      "args": ["-y", "@liquiddesign/freelo-mcp"],
+      "env": {
+        "FREELO_EMAIL": "your-email@example.com",
+        "FREELO_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### 3. Claude Desktop
+
+Add to Claude Desktop configuration file:
 
 **MacOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "freelo-mcp": {
+      "command": "npx",
+      "args": ["-y", "@liquiddesign/freelo-mcp"],
+      "env": {
+        "FREELO_EMAIL": "your-email@example.com",
+        "FREELO_API_KEY": "your-api-key-here"
+      }
+    }
+  }
+}
+```
+
+### 4. Development Setup (Local)
+
+For local development, use the built project directly:
 
 ```json
 {
@@ -51,8 +95,6 @@ Add your credentials to the Claude Desktop configuration file:
   }
 }
 ```
-
-**Important**: Replace `/absolute/path/to/freelo-mcp` with the actual path to your project and fill in your Freelo credentials.
 
 ## Project Structure
 
